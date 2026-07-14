@@ -94,3 +94,209 @@ EXP4
 38.git add file1.txt
 39.git rebase --continue
 
+
+
+
+
+
+from lab manual
+
+PROGRAM-1
+$ git config --global --unset-all user.name
+$ git config --global --unset-all user.email
+$ git remote remove origin
+$ git config --global user.name "ananya262"
+$ git config --global user.email "ananya.s801234@gmail.com"
+$ git config --list
+
+$ mkdir Exp1
+$ cd Exp1
+$ git init
+$ echo "Hello DSATM" > file1.txt
+$ git status
+$ git add file1.txt
+$ git status
+$ git commit -m "Added file1"
+$ git log --oneline
+
+PROGRAM-2
+Create a repository in github
+$ mkdir Exp2
+$ cd Exp2
+$ git init
+$ echo "Experiment 2" > file1.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ git remote add origin main
+$ git remote -v
+$ git push -u origin main
+
+PROGRAM -3
+Open github and create public repo and copy link
+$ git clone “repository URL”
+$ cd <repository-name>
+$ git remote -v
+$ git fetch origin
+$ git merge origin/master
+$ git pull origin main
+$ git status
+$ git log --oneline
+
+PROGRAM-4
+$ mkdir Exp4
+$ cd Exp4
+$ git init
+$ echo "Main Branch" > file1.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ git branch
+$ git branch feature-login
+$ git branch
+$ git checkout feature-login
+$ echo "Feature Login Added" >> file1.txt
+$ git add .
+$ git commit -m "Added Login Feature"
+$ git checkout main
+$ git merge feature-login
+$ cat file1.txt
+$ git checkout -b feature-conflict
+$ echo "Conflict Data" > file1.txt
+$ git add .
+$ git commit -m "Conflict Change"
+$ git checkout main
+$ echo "Main Modified" > file1.txt
+$ git add .
+$ git commit -m "Main Change"
+$ git merge feature-conflict
+$ cat file1.txt ( keep only - Main Modified ,Conflict Data)
+$ git add file1.txt
+$ git commit -m "Resolved Conflict"
+$ git checkout -b feature-rebase
+$ echo "Rebase Example" >> file1.txt
+$ git add .
+$ git commit -m "Rebase Commit"
+$ git rebase main
+
+PROGRAM-5
+
+$ mkdir Exp5
+$ cd Exp5
+$ git init
+$ echo "Hello Git" > file1.txt
+$git add .
+$ git commit -m "Initial Commit"
+$ echo "New Changes" >> file1.txt
+$ git status
+$ git stash
+$ git status
+$ git checkout -b feature-branch
+$ git stash list
+$ git stash pop
+$ cat file1.txt
+
+PROGRAM-6
+
+$ mkdir Exp6
+$ cd Exp6
+$ git init
+$ echo "Main Project" > project.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ git checkout -b feature-login
+$ echo "Login Feature Added" >> project.txt
+$ cat project.txt
+$ git add .
+$ git commit -m "Added Login Feature"
+$ git checkout main
+$ git merge feature-login
+$ cat project.txt
+$ git branch -d feature-login
+
+PROGRAM-7
+$ mkdir Exp7
+$ cd Exp7
+$ git init
+$ echo "Version 1" > file1.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ echo "Work in Progress" >> file1.txt
+$ git status
+$ git stash
+$ git stash list
+$ git stash pop
+$ echo "Line 2" >> file1.txt
+$ git add .
+$ git commit -m "Commit 2"
+$ echo "Line 3" >> file1.txt
+$ git add .
+$ git commit -m "Commit 3"
+$ git log –oneline
+$ git rebase -i HEAD~2 (editor open change to- pick Commit 2, squash Commit 3) (save and
+exit)
+$ git tag v1.0
+$ git tag
+$ git show v1.0
+$ git revert HEAD
+
+PROGRAM-8
+$ mkdir Exp8
+$ cd Exp8
+$ git init
+$ echo "Line 1" > file1.txt
+$ git add .
+$ git commit -m "Commit 1"
+$ echo "Line 2" >> file1.txt
+$ git add .
+$ git commit -m "Commit 2"
+$ echo "Line 3" >> file1.txt
+$ git add .
+$ git commit -m "Commit 3"
+$ echo "Line 4" >> file1.txt
+$ git add .
+$ git commit -m "Commit 4"
+$ echo "Line 5" >> file1.txt
+$ git add .
+$ git commit -m "Commit 5"
+$ echo "Line 6" >> file1.txt
+$ git add .
+$ git commit -m "Commit 6"
+$ git log --oneline -n 5
+$ git log -n 5 --pretty=format:"%h - %an, %ar : %s"
+
+PROGRAM-9
+$ mkdir Exp9
+$ cd Exp9
+$ git init
+$ echo "Initial Project" > file1.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ git checkout -b source-branch
+$ echo "Feature A" >> file1.txt
+$ git add .
+$ git commit -m "Commit A"
+$ echo "Feature B" >> file1.txt
+$ git add .
+$ git commit -m "Commit B"
+$ echo "Feature C" >> file1.txt
+$ git add .
+$ git commit -m "Commit C"
+$ git log –oneline
+$ git checkout main
+$ git checkout -b target-branch
+$ git cherry-pick (a1b2c3d^..b2c3d4e the number which you get (u get it in oneline command
+start & end))
+$ git log –oneline
+
+PROGRAM-10
+$ mkdir Exp10
+$ cd Exp10
+$ git init
+$ echo "Hello Git" > file1.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ git log
+$ git log --author="ananya262"
+$ git log --author="JohnDoe" --since="2023-01-01" --until="2023-12-31" --pretty=format:"%h -
+%ad - %s" --date=short
+$ git log --author="ananya262"
+
